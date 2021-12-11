@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  flask:
+    container_name: flask_etc_api
+    restart: always
+    build: 
+      context: ./flask
+      args:
+        ROOT_PATH: ${ROOT_PATH}
+    privileged: true
+    # ports:
+    #   - ":8000"
+    # 此command 可移至dockerfile CMD/entrypoint 執行
+    # command: bash -c "mount -a && /home/project/flask/Run_server.sh && gunicorn -w 1 -b :8000 --timeout 300 Run_server:app"
+    # command: bash -c "gunicorn -w 1 -b :8000 --timeout 300 Run_server:app"
+
+  # nginx:
+  #   container_name: nginx_etc_api
+  #   restart: always
+  #   build: ./nginx
+  #   ports:
+  #     - "51005:80"
+  #   depends_on:
+  #     - flask

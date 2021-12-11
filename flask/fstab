@@ -1,0 +1,2 @@
+# UNCONFIGURED FSTAB FOR BASE SYSTEM
+{NASurl} {mountLocation} cifs ro,username={username},password={password} 0 0
