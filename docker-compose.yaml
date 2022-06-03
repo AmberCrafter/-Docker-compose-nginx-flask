@@ -22,6 +22,6 @@ services:
     volumes:
       - ./nginx/html:/usr/share/nginx/html
     ports:
-      - "51005:80"
+      - "${export_port}:80"
     depends_on:
       - flask
